@@ -1,3 +1,15 @@
+@Library('pipeline-library@master') _
+ 
 pipeline {
-
+    agent any
+    stages {
+        stage('Git Checkout') {
+            steps {
+            gitCheckout(
+                branch: "master",
+                url: "https://github.com/vigneshsweekaran/capstone-easyclaim-frontend.git"
+            )
+            }
+        }
+    }
 }

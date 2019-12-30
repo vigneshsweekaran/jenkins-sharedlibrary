@@ -7,8 +7,8 @@ pipeline {
             steps {
             gitCheckout(
                 branch: "master",
-                url: "https://github.com/vigneshsweekaran/capstone-easyclaim-frontend.git"
-            )
+                url: "https://github.com/vigneshsweekaran/capstone-easyclaim-frontend.git",
+                credential: "git_credential")
             }
         }
     }

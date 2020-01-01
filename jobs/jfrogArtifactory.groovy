@@ -1,5 +1,5 @@
 job('JFrogArtifactory') {
-    description "Builds MyProject from master branch."
+    description "Setup the Jfrog artifactory as docker container in master node"
     label('master')
     steps {
         shell "sudo mkdir -p /data/jfrog/artifactory || true"
@@ -7,7 +7,8 @@ job('JFrogArtifactory') {
         shell "sudo chown -R artifactory /data || true"
         shell "docker stop artifactory || true"
         shell "docker rm artifactory || true"
-        shell "docker run --name artifactory -d -p 8081:8081 \
+        shell "docker --version
+            docker run --name artifactory -d -p 8081:8081 \
             -v /data/jfrog/artifactory:/var/opt/jfrog/artifactory \
             -e EXTRA_JAVA_OPTIONS='-Xms512m -Xmx1g -Xss256k -XX:+UseG1GC' \
             docker.bintray.io/jfrog/artifactory-cpp-ce:latest"

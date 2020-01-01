@@ -1,4 +1,4 @@
-Job('JFrogArtifactory') {
+job('JFrogArtifactory') {
     description "Builds MyProject from master branch."
     label('master')
     steps {

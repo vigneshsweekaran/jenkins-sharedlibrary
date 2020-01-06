@@ -11,5 +11,11 @@ pipeline {
                 credential: "git_credential")
             }
         }
+        stage('Git Checkout') {
+            steps {
+            sh ''
+            }
+        }
     }
+    
 }

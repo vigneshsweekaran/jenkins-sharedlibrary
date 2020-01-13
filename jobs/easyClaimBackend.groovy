@@ -1,12 +1,22 @@
 pipelineJob('EasyClaimBackend') {
+    description('EasyClaimBackend')
     triggers {
         scm('* * * * *')
     }
     
     definition {
-        cps {
-            script(readFileFromWorkspace('pipeline/backend-jenkinsfile'))
-            sandbox()
+        cpsScm {
+            lightweight(true)
+            git {
+                branch('master')
+                remote{
+                    url('https://github.com/vigneshsweekaran/jenkins-library.git')   
+                }
+                extensions {
+                    wipeOutWorkspace()
+                }
+            }
+            scriptPath('pipeline/backend-jenkinsfile')
         }
     }
 }

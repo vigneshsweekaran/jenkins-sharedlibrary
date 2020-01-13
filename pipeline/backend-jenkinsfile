@@ -14,7 +14,7 @@ pipeline {
                     credential: "git_credential")
             }
         }
-        stage('SonarQube analysis') {
+        stage('Maven Build') {
             steps {
                 sh 'mvn clean package'
             }

@@ -8,10 +8,20 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-            gitCheckout(
-                branch: "master",
-                url: "https://github.com/vigneshsweekaran/capstone-easyclaim-backend.git",
-                credential: "git_credential")
+                gitCheckout(
+                    branch: "master",
+                    url: "https://github.com/vigneshsweekaran/capstone-easyclaim-backend.git",
+                    credential: "git_credential")
+            }
+        }
+        stage('SonarQube analysis') {
+            environment {
+                scannerHome = tool 'sonarscanner'
+            }
+            steps {
+                withSonarQubeEnv('My SonarQube Server') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
             }
         }
     }

@@ -18,7 +18,7 @@ pipelineJob('EasyClaimFrontend') {
                     extensions { }
                 }
             }
-            scriptPath('backend-jenkinsfile')
+            scriptPath('frontend-jenkinsfile')
         }
     }
 }

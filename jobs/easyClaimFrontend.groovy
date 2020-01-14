@@ -10,7 +10,7 @@ pipelineJob('EasyClaimFrontend') {
                     branch('master')
                     remote{
                         url('https://github.com/vigneshsweekaran/capstone-easyclaim-frontend.git')
-                        credential('git_credential')
+                        credentials('git_credential')
                     }
                     extensions { }
                 }

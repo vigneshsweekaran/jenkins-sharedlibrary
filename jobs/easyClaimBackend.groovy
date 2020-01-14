@@ -1,5 +1,7 @@
 pipelineJob('EasyClaimBackend') {
+    
     description('EasyClaimBackend')
+    
     definition {
         cpsScm {
             lightweight(true)
@@ -13,7 +15,7 @@ pipelineJob('EasyClaimBackend') {
                     extensions { }
                 }
             }
-            scriptPath('pipeline/backend-jenkinsfile')
+            scriptPath('backend-jenkinsfile')
         }
     }
 }

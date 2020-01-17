@@ -2,6 +2,10 @@ pipelineJob('EasyClaimFrontend') {
 
     description('EasyClaimFrontend application developed in Angular 7')
 
+    triggers {
+        scm('* * * * *')
+    }
+
     definition {
         cpsScm {
             lightweight(true)

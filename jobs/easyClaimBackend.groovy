@@ -2,6 +2,10 @@ pipelineJob('EasyClaimBackend') {
     
     description('EasyClaimBackend')
     
+    triggers {
+        scm('* * * * *')
+    }
+    
     definition {
         cpsScm {
             lightweight(true)

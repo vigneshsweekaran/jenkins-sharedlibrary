@@ -10,7 +10,7 @@ def call(list) {
                 for (file in entry.getAffectedFiles()) {
                     print(file)
                     print(file.getPath())
-                    if (file.getPath() =~ /^list[i]/) {
+                    if (file.getPath() =~ "${list[i]}") {
                         print(list[i])
                         dir (list[i]) {
                             sh 'mvn clean package'

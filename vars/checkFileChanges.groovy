@@ -12,12 +12,8 @@ def call(list) {
                     print(file.getPath())
                     if (file.getPath() =~ /^app1/) {
                         print(list[i])
-                        stage(list[i]){
-                            steps {
-                                dir (list[i]) {
-                                    sh 'mvn clean package'
-                                }
-                            }    
+                        dir (list[i]) {
+                            sh 'mvn clean package'
                         }
                     }
                 }

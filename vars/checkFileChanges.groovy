@@ -13,6 +13,7 @@ def call(list) {
                     if (file.getPath() =~ "${list[i]}") {
                         print(list[i])
                         dir (list[i]) {
+                            sh 'pwd && ls'
                             sh 'mvn clean package'
                         }
                     }

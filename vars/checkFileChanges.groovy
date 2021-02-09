@@ -1,3 +1,4 @@
+@NonCPS
 def call(list) {
     for(int i=0; i < list.size(); i++) {
         print(i)
@@ -11,10 +12,7 @@ def call(list) {
                     print(file.getPath())
                     if (file.getPath() =~ "${list[i]}") {
                         print(list[i])
-                        dir (list[i]) {
-                            sh 'pwd && ls'
-                            sh 'mvn clean package'
-                        }
+                        return list[i]
                     }
                 }
             }

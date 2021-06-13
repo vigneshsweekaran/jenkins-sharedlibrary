@@ -1,4 +1,3 @@
-
 def call(Map stageParams) {
  
     checkout([
@@ -6,4 +5,4 @@ def call(Map stageParams) {
         branches: [[name:  stageParams.branch ]],
         userRemoteConfigs: [[ credentialsId: stageParams.credential, url: stageParams.url ]]
     ])
-  }
+}

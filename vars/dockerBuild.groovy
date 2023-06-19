@@ -1,3 +1,3 @@
-def call() {
-  docker.build("vigneshsweekaran/hello-world:${TAG}")
+def call(String username) {
+  docker.build(username + "/hello-world:${TAG}")
 }
